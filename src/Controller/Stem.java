@@ -2,14 +2,16 @@ package Controller;
 import java.sql.*;
 import Model.*;
 import DbConnection.*;
+import View.CustomerLogIn;
+import View.LogIn;
 
 public class Stem {
     private static PreparedStatement prst;
     private static ResultSet rs;
     private static Connection conn;
 
-    public static void main(String[] args) throws SQLException {
-         loginCustomers(98,"kenneth");
+    public static void main(String[] args) {
+        LogIn logIn = new LogIn();
     }
     public static ResultSet loginUser(String username,String password,String type) throws SQLException{
         conn = JDBC.getConnection();
@@ -22,11 +24,11 @@ public class Stem {
 
         return rs;
     }
-    public static ResultSet loginCustomers(int customernumber,String password) throws SQLException{
+    public static ResultSet loginCustomers(int customerNumber,String password) throws SQLException{
         conn = JDBC.getConnection();
         String query = "SELECT `customernumber`,`password` FROM `customer` WHERE customernumber=? and password=?";
         prst =conn.prepareStatement(query);
-        prst.setInt(1, customernumber);
+        prst.setInt(1, customerNumber);
         prst.setString(2, password);
         rs=prst.executeQuery();
 

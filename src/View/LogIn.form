@@ -14,7 +14,7 @@
         </constraints>
         <properties>
           <font name="Impact" size="30" style="1"/>
-          <text value="LOG IN AS"/>
+          <text value="LOG IN AS..."/>
         </properties>
       </component>
       <grid id="d3a2f" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">

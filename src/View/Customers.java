@@ -2,9 +2,6 @@ package View;
 
 import javax.swing.*;
 
-public class Customers {
+public class Customers extends JFrame{
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 }

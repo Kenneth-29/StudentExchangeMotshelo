@@ -1,8 +1,9 @@
 package View;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class FacilitateLoan {
+public class FacilitateLoan extends JFrame{
     private JButton proceedButton;
     private JTextField textField1;
     private JTextField textField2;
@@ -12,4 +13,7 @@ public class FacilitateLoan {
     private JTextField textField6;
     private JTextField textField7;
     private JTextField textField8;
+
+    public FacilitateLoan() throws HeadlessException {
+    }
 }
