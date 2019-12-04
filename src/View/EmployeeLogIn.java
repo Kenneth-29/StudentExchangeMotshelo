@@ -17,6 +17,7 @@ public class EmployeeLogIn extends JFrame {
     ResultSet rs = null;
 
     public EmployeeLogIn() {
+
         JFrame frame= new JFrame();
         frame.setTitle("EmpLogin");
         frame.add(panel1);

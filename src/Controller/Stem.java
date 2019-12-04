@@ -1,5 +1,8 @@
 package Controller;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import Model.*;
 import DbConnection.*;
 import View.CustomerLogIn;
@@ -10,8 +13,8 @@ public class Stem {
     private static ResultSet rs;
     private static Connection conn;
 
-    public static void main(String[] args) {
-        LogIn logIn = new LogIn();
+    public static void main(String[] args) throws SQLException {
+
     }
     public static ResultSet loginUser(String username,String password,String type) throws SQLException{
         conn = JDBC.getConnection();
@@ -42,7 +45,7 @@ public class Stem {
     }
     public static void addCustomerDetails(Customer customer) throws SQLException{
         conn = JDBC.getConnection();
-        String query = "INSERT INTO `customer` (`customernumber`, `firstname`, `surname`, `date`, `password`) VALUES (?, ?, ?, ?, 'password')";
+        String query = "INSERT INTO `customer` (`customernumber`, `firstname`, `lastname`, `date`, `password`) VALUES (?, ?, ?, ?, 'password')";
         prst =conn.prepareStatement(query);
         prst.setInt(1, customer.getCustomerNumber());
         prst.setString(2, customer.getFirstName());
@@ -52,7 +55,7 @@ public class Stem {
     }
     public static void updateCustomerDetails(int customernumber,String firstname,String lastname,Date date) throws SQLException{
         conn = JDBC.getConnection();
-        String query = "update customer set firstname =?,surname=?,date=? where customernumber=?";
+        String query = "update customer set firstname =?,lastname=?,date=? where customernumber=?";
         prst =conn.prepareStatement(query);
         prst.setString(1,firstname);
         prst.setString(2, lastname);
@@ -66,6 +69,55 @@ public class Stem {
         prst =conn.prepareStatement(query);
         prst.setInt(1, customernumber);
         prst.executeUpdate();
+    }
+    public ArrayList<Customer> listCustomers() throws SQLException{
+        conn = JDBC.getConnection();
+        String query = "Select firstname, lastname,customernumber, date FROM Customer";
+        prst = conn.prepareStatement(query);
+        rs = prst.executeQuery();
+        ArrayList<Customer> list = new ArrayList<>();
+        while(rs.next()){
+
+            String firstname = rs.getString("firstname");
+            String lastname = rs.getString("lastname");
+            int customernumber = rs.getInt("customernumber");
+            Date date = rs.getDate("date");
+
+            System.out.println("CustomerName: " + customernumber);
+            System.out.println("First Name: " + firstname);
+            System.out.println("Last Name: " + lastname);
+            System.out.println("Date: " + date);
+
+            Customer cus = new Customer(firstname,lastname,customernumber,date);
+            list.add(cus);
+
+        }
+        rs.close();
+        return list;
+    }
+    public ArrayList<Employee> listEmployee() throws SQLException{
+        conn = JDBC.getConnection();
+        String query = "SELECT firstname, lastname,username , email, physicaladdress from Employee";
+        prst = conn.prepareStatement(query);
+        rs = prst.executeQuery();
+        ArrayList<Employee> list =new ArrayList<>();
+        while(rs.next()){
+            String firstname = rs.getString("firstname");
+            String lastname = rs.getString("lastname");
+            String username = rs.getString("username");
+            String email = rs.getString("email");
+            String physicaladdress = rs.getString("physicaladdress");
+
+            System.out.println("First Name: "+ firstname);
+            System.out.println("Last Name: " + lastname);
+            System.out.println("Email: " + email);
+            System.out.println("Physical Address: " + physicaladdress);
+
+            Employee emp = new Employee(firstname, lastname, username,email, physicaladdress);
+            list.add(emp);
+        }
+        rs.close();
+        return list;
     }
 
     public static void employeeDetails(String username, String firstname, String lastname,String email, String physicalAddress, String type) throws SQLException{
@@ -119,6 +171,30 @@ public class Stem {
         prst.setInt(7, cellNumber);
         prst.setString(8,loanStatus);
         prst.executeUpdate();
+    }
+    public static void listLoan() throws SQLException {
+        conn = JDBC.getConnection();
+        String query = "Select firstname, lastname, loanamount, date, daysdue, cellnumber, loanstatus FROM Loan";
+        prst = conn.prepareStatement(query);
+        rs = prst.executeQuery();
+        while(rs.next()){
+            String firstname = rs.getString("firstname");
+            String lastname = rs.getString("lastname");
+            double loanamount = rs.getDouble("loanamount");
+            Date date = rs.getDate("date");
+            int daysdue = rs.getInt("daysdue");
+            int cellnumber = rs.getInt("cellnumber");
+            String loanstatus = rs.getString("loanstatus");
+
+            System.out.println("First Name: " + firstname);
+            System.out.println("Last Name: " + lastname);
+            System.out.println("Loan Amount: " + loanamount);
+            System.out.println("Date: " + date);
+            System.out.println("Days Due" + daysdue);
+            System.out.println("Cell: " + cellnumber);
+            System.out.println("Loan Status: " + loanstatus);
+        }
+        rs.close();
     }
 
 }
