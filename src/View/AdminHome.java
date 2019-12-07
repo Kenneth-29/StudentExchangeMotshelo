@@ -24,19 +24,25 @@ public class AdminHome extends JFrame{
         USERACCOUNTSButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                UserAccounts userAccounts = new UserAccounts();
+                userAccounts.setVisible(true);
+                frame.setVisible(false);
             }
         });
         VIEWLOANSButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Loans loans = new Loans();
+                loans.setVisible(true);
+                frame.setVisible(false);
             }
         });
         CUSTOMERACCOUNTSButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                CustomerAccounts customerAccounts = new CustomerAccounts();
+                customerAccounts.setVisible(true);
+                frame.setVisible(false);
             }
         });
         LOGOFFButton.addActionListener(new ActionListener() {

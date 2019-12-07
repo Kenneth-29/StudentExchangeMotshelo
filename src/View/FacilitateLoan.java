@@ -1,23 +1,25 @@
 package View;
 
+import Controller.Stem;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.sql.SQLException;
 
 public class FacilitateLoan extends JFrame{
     private JButton ADDButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextField textField7;
-    private JTextField textField8;
+    private JTextField cusNum;
+    private JTextField fname;
+    private JTextField sName;
+    private JTextField loanAmt;
+    private JTextField dat;
+    private JTextField daysdue;
+    private JTextField cellNum;
+    private JTextField stat;
     private JPanel panel1;
-    private JButton UPDATEButton;
-    private JButton DELETEButton;
     private JButton VIEWLOANSButton;
     private JButton BACKButton;
 
@@ -35,6 +37,46 @@ public class FacilitateLoan extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 EmployeeHome employeeHome = new EmployeeHome();
                 employeeHome.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
+        ADDButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    int customerNumber = Integer.parseInt(cusNum.getText());
+                    String firstName = fname.getText();
+                    String lastName = sName.getText();
+                    Double loanAmount = Double.valueOf(loanAmt.getText());
+                    Date date = Date.valueOf(dat.getText());
+                    int daysDue = Integer.parseInt(daysdue.getText());
+                    int cellNumber = Integer.parseInt(cellNum.getText());
+                    String status = stat.getText();
+                    Stem.faciliateLoan(customerNumber, firstName, lastName, loanAmount, date, daysDue, cellNumber, status);
+                    JOptionPane.showMessageDialog(frame, "Loan Administered!!");
+                    cusNum.setText("");
+                    fname.setText("");
+                    sName.setText("");
+                    loanAmt.setText("");
+                    dat.setText("yyyy-mm-dd");
+                    daysdue.setText("");
+                    cellNum.setText("");
+                    stat.setText("");
+                    cusNum.requestFocus();
+
+
+
+                }catch (SQLException ex){
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        VIEWLOANSButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LoansEmp loansEmp = new LoansEmp();
+                loansEmp.setVisible(true);
                 frame.setVisible(false);
             }
         });

@@ -6,11 +6,13 @@ public class Employee extends User {
     private String email;
     private String physicalAddress;
 
+
     public Employee(String firstName, String lastName, String username, String email, String physicalAddress) {
         super(firstName, lastName);
         this.username = username;
         this.email = email;
         this.physicalAddress = physicalAddress;
+
     }
 
     public String getFirstName() {

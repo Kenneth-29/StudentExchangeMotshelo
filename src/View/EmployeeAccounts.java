@@ -5,15 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Customers extends JFrame{
-
+public class EmployeeAccounts extends JFrame{
     private JPanel panel1;
     private JTable table1;
     private JButton BACKButton;
 
-    public Customers() throws HeadlessException {
+    public EmployeeAccounts() throws HeadlessException {
         JFrame frame= new JFrame();
-        frame.setTitle("Customers");
+        frame.setTitle("Employees List");
         frame.add(panel1);
         frame.pack();
         frame.setSize(800, 600);
@@ -23,8 +22,8 @@ public class Customers extends JFrame{
         BACKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RegisterCustomer registerCustomer = new RegisterCustomer();
-                registerCustomer.setVisible(true);
+                UserAccounts userAccounts = new UserAccounts();
+                userAccounts.setVisible(true);
                 frame.setVisible(false);
             }
         });

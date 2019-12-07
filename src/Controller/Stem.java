@@ -1,11 +1,9 @@
 package Controller;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import Model.*;
 import DbConnection.*;
-import View.CustomerLogIn;
 import View.LogIn;
 
 public class Stem {
@@ -173,6 +171,7 @@ public class Stem {
         prst.setString(8,loanStatus);
         prst.executeUpdate();
     }
+
     public static void listLoan() throws SQLException {
         conn = JDBC.getConnection();
         String query = "Select firstname, lastname, loanamount, date, daysdue, cellnumber, loanstatus FROM Loan";

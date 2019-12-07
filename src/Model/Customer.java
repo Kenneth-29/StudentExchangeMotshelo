@@ -11,6 +11,7 @@ public class Customer extends User {
         this.customerNumber = customerNumber;
         this.dateCreated = dateCreated;
     }
+
     public String getFirstName() {
         return firstName;
     }

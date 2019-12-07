@@ -89,7 +89,7 @@
               <text value="Customer Number"/>
             </properties>
           </component>
-          <component id="322d2" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="322d2" class="javax.swing.JTextField" binding="cusNum">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -97,7 +97,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="7df6" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+          <component id="7df6" class="javax.swing.JTextField" binding="fname">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -105,7 +105,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="9f88d" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+          <component id="9f88d" class="javax.swing.JTextField" binding="sName">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -113,23 +113,27 @@
             </constraints>
             <properties/>
           </component>
-          <component id="cd751" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+          <component id="cd751" class="javax.swing.JTextField" binding="loanAmt">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value=""/>
+            </properties>
           </component>
-          <component id="bfe5" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+          <component id="bfe5" class="javax.swing.JTextField" binding="dat">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value="yyyy-mm-dd"/>
+            </properties>
           </component>
-          <component id="bfb52" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+          <component id="bfb52" class="javax.swing.JTextField" binding="daysdue">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -137,7 +141,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="44474" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+          <component id="44474" class="javax.swing.JTextField" binding="cellNum">
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -145,13 +149,15 @@
             </constraints>
             <properties/>
           </component>
-          <component id="e6cb2" class="javax.swing.JTextField" binding="textField8" default-binding="true">
+          <component id="e6cb2" class="javax.swing.JTextField" binding="stat">
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value=""/>
+            </properties>
           </component>
         </children>
       </grid>
@@ -167,20 +173,6 @@
             <properties>
               <font name="Impact" size="13"/>
               <text value="ADD"/>
-            </properties>
-          </component>
-          <component id="d0135" class="javax.swing.JButton" binding="UPDATEButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <font name="Impact" size="13"/>
-              <text value="UPDATE"/>
-            </properties>
-          </component>
-          <component id="a2f5b" class="javax.swing.JButton" binding="DELETEButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <font name="Impact" size="13"/>
-              <text value="DELETE"/>
             </properties>
           </component>
           <component id="5d827" class="javax.swing.JButton" binding="VIEWLOANSButton" default-binding="true">
