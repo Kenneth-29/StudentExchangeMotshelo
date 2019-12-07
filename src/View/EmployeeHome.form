@@ -17,13 +17,7 @@
           <text value="EMPLOYEE HOME"/>
         </properties>
       </component>
-      <grid id="2c132" layout-manager="FormLayout">
-        <rowspec value="center:d:noGrow"/>
-        <rowspec value="top:4dlu:noGrow"/>
-        <rowspec value="center:max(d;4px):noGrow"/>
-        <rowspec value="top:4dlu:noGrow"/>
-        <rowspec value="center:max(d;4px):noGrow"/>
-        <colspec value="fill:d:grow"/>
+      <grid id="2c132" layout-manager="GridBagLayout">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -33,7 +27,7 @@
           <component id="1fe1b" class="javax.swing.JButton" binding="registerCustomerButton" default-binding="true">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-              <forms/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
             <properties>
               <text value="Register Customer"/>
@@ -41,8 +35,8 @@
           </component>
           <component id="65fec" class="javax.swing.JButton" binding="facilitateLoanButton" default-binding="true">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-              <forms/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
             <properties>
               <text value="Facilitate Loan"/>
@@ -50,8 +44,8 @@
           </component>
           <component id="33e81" class="javax.swing.JButton" binding="logOffButton" default-binding="true">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-              <forms/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="0.0"/>
             </constraints>
             <properties>
               <text value="LogOff"/>

@@ -75,6 +75,13 @@
               <text value="LogIn"/>
             </properties>
           </component>
+          <component id="45fe3" class="javax.swing.JButton" binding="backButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="12"/>
+              <text value="Back"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

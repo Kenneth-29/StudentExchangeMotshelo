@@ -80,8 +80,8 @@
             <properties>
               <font name="Impact" size="15"/>
               <model>
-                <item value="Admin"/>
                 <item value="Regular"/>
+                <item value="Admin"/>
               </model>
             </properties>
           </component>
@@ -90,6 +90,13 @@
             <properties>
               <font name="Impact" size="12"/>
               <text value="LogIn"/>
+            </properties>
+          </component>
+          <component id="dba32" class="javax.swing.JButton" binding="backButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="12"/>
+              <text value="Back"/>
             </properties>
           </component>
         </children>

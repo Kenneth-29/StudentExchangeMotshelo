@@ -162,11 +162,39 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="6f53f" class="javax.swing.JButton" binding="proceedButton" default-binding="true">
+          <component id="6f53f" class="javax.swing.JButton" binding="ADDButton" default-binding="true">
             <constraints/>
             <properties>
               <font name="Impact" size="13"/>
-              <text value="Proceed"/>
+              <text value="ADD"/>
+            </properties>
+          </component>
+          <component id="d0135" class="javax.swing.JButton" binding="UPDATEButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="UPDATE"/>
+            </properties>
+          </component>
+          <component id="a2f5b" class="javax.swing.JButton" binding="DELETEButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="DELETE"/>
+            </properties>
+          </component>
+          <component id="5d827" class="javax.swing.JButton" binding="VIEWLOANSButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="VIEW LOANS"/>
+            </properties>
+          </component>
+          <component id="570e9" class="javax.swing.JButton" binding="BACKButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="BACK"/>
             </properties>
           </component>
         </children>

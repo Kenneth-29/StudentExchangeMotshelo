@@ -12,7 +12,7 @@ public class EmployeeHome extends JFrame{
 
     public EmployeeHome() {
         JFrame frame= new JFrame();
-        frame.setTitle("EmpHome");
+        frame.setTitle("Employee Home");
         frame.add(panel1);
         frame.pack();
         frame.setSize(800, 600);
@@ -32,6 +32,15 @@ public class EmployeeHome extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 FacilitateLoan facilitateLoan = new FacilitateLoan();
                 facilitateLoan.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
+        logOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Succesfully logged out! Please enter username and password to login");
+                EmployeeLogIn employeeLogIn = new EmployeeLogIn();
+                employeeLogIn.setVisible(true);
                 frame.setVisible(false);
             }
         });

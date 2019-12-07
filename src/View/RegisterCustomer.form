@@ -121,6 +121,34 @@
               <text value="ADD CUSTOMER"/>
             </properties>
           </component>
+          <component id="a6872" class="javax.swing.JButton" binding="UPDATEButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="UPDATE"/>
+            </properties>
+          </component>
+          <component id="7ae09" class="javax.swing.JButton" binding="DELETEButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="DELETE"/>
+            </properties>
+          </component>
+          <component id="7ae21" class="javax.swing.JButton" binding="LISTCUSTOMERSButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="LIST CUSTOMERS"/>
+            </properties>
+          </component>
+          <component id="95f37" class="javax.swing.JButton" binding="BACKButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <font name="Impact" size="13"/>
+              <text value="BACK"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

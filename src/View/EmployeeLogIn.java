@@ -14,6 +14,7 @@ public class EmployeeLogIn extends JFrame {
     private JComboBox comboBox1;
     private JPanel panel1;
     private JPasswordField passwordField;
+    private JButton backButton;
     ResultSet rs = null;
 
     public EmployeeLogIn() {
@@ -37,19 +38,31 @@ public class EmployeeLogIn extends JFrame {
                     rs = Stem.loginUser(username, password, type);
 
                     if(rs.next()){
+                        JOptionPane.showMessageDialog(frame, "Login successful, you are logged in as " + rs.getString("type") +" User");
                        if(comboBox1.getSelectedIndex()==0){
-                          AdminHome aH = new AdminHome();
-                          aH.setVisible(true);
-                          frame.setVisible(false);
-                       }else{
-                          EmployeeHome eH = new EmployeeHome();
-                          eH.setVisible(true);
-                          frame.setVisible(false);
+
+                           EmployeeHome eH = new EmployeeHome();
+                           eH.setVisible(true);
+                           frame.setVisible(false);
+                       }else if (comboBox1.getSelectedIndex()==1){
+                           AdminHome aH = new AdminHome();
+                           aH.setVisible(true);
+                           frame.setVisible(false);
                        }
+                    }else{
+                        JOptionPane.showMessageDialog(frame,"username or password is incorrect, please enter the correct details" );
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LogIn logIn = new LogIn();
+                logIn.setVisible(true);
+                frame.setVisible(false);
             }
         });
     }

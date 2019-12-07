@@ -14,6 +14,7 @@ public class Stem {
     private static Connection conn;
 
     public static void main(String[] args) throws SQLException {
+        LogIn logIn = new LogIn();
 
     }
     public static ResultSet loginUser(String username,String password,String type) throws SQLException{

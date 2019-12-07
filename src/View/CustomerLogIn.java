@@ -14,6 +14,7 @@ public class CustomerLogIn extends JFrame {
     private javax.swing.JTextField CustomerNumTextField;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JButton logInButton;
+    private JButton backButton;
     ResultSet rs = null;
 
 
@@ -37,14 +38,26 @@ public class CustomerLogIn extends JFrame {
                 try{
                     rs= Stem.loginCustomers(customerNumber, password);
                     if(rs.next()){
+                        JOptionPane.showMessageDialog(frame, "Login Successful");
                         CustomerHome cH = new CustomerHome();
                         cH.setVisible(true);
                         frame.setVisible(false);
+                    }else{
+                        JOptionPane.showMessageDialog(frame, "Login Failed, please check your Customer Number and Password then try again" +
+                                " or contact admin");
                     }
                 }catch(SQLException ex)
                 {
                     ex.printStackTrace();
                 }
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LogIn logIn = new LogIn();
+                logIn.setVisible(true);
+                frame.setVisible(false);
             }
         });
     }

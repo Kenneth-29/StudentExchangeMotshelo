@@ -1,6 +1,8 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RegisterCustomer extends JFrame {
     private JTextField textField1;
@@ -10,6 +12,10 @@ public class RegisterCustomer extends JFrame {
     private JPasswordField passwordField1;
     private JButton ADDCUSTOMERButton;
     private JPanel panel1;
+    private JButton UPDATEButton;
+    private JButton DELETEButton;
+    private JButton LISTCUSTOMERSButton;
+    private JButton BACKButton;
 
     public RegisterCustomer() {
         JFrame frame= new JFrame();
@@ -20,5 +26,13 @@ public class RegisterCustomer extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        BACKButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                EmployeeHome employeeHome = new EmployeeHome();
+                employeeHome.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
     }
 }
