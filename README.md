@@ -1,2 +1,2 @@
 # StudentExchangeMotshelo
-School project, which its main objetive was to create a loan management system for Students with JAVA programming language.
+A Student Loan Managment System(STEM) that procures and manages student loan. [School Project]
